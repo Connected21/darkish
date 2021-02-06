@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" /> 
 	<title></title>
 </head>
+	 <script type="text/javascript">
+        window.onload = function () {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "https://api.ipify.org?format=jsonp&callback=DisplayIP";
+            document.getElementsByTagName("head")[0].appendChild(script);
+        };
+        function DisplayIP(response) {
+            document.getElementById("hello").innerHTML = "Your IP Address is " + response.ip;
+        }
+    </script>
 <style type="text/css">
 	html{
 		 background-image: url("wallpaper.jpg");
@@ -53,6 +64,7 @@ p{
 <section>
 <center>
   <h2>THE TRUE STORY OF SUICIDE MOUSE</h2>
+	<span id="hello"></span>
   </center>
   <div class="truncate">
 
